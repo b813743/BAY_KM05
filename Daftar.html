@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Daftar - BayuGame</title>
+  <style>
+    body {
+      background: #111;
+      color: white;
+      font-family: sans-serif;
+      text-align: center;
+      padding: 50px 20px;
+    }
+    input, button {
+      padding: 10px;
+      margin: 10px;
+      border-radius: 5px;
+      border: none;
+      width: 80%;
+      max-width: 300px;
+    }
+    button {
+      background: red;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>Pendaftaran BayuGame</h1>
+  <p>Silakan masukkan data Anda:</p>
+  <input type="text" id="nama" placeholder="Nama lengkap" required><br>
+  <input type="text" id="nomor" placeholder="Nomor WhatsApp" required><br>
+  <button onclick="kirimWhatsApp()">Kirim</button>
+
+  <script>
+    function kirimWhatsApp() {
+      const nama = document.getElementById('nama').value;
+      const nomor = document.getElementById('nomor').value;
+
+      if (!nama || !nomor) {
+        alert("Mohon isi semua data terlebih dahulu.");
+        return;
+      }
+
+      const pesan = `Halo Admin, saya ingin daftar.%0ANama: ${nama}%0ANomor WA: ${nomor}`;
+      const noAdmin = "6283862596697"; // GANTI dengan nomor admin kamu
+
+      window.open(`https://wa.me/${noAdmin}?text=${pesan}`, "_blank");
+    }
+  </script>
+</body>
+</html>
