@@ -2,39 +2,61 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <title>Daftar - BayuGame</title>
+  <meta charset="UTF-8" />
+  <title>Daftar BayuGame</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
     body {
-      background: #111;
-      color: white;
-      font-family: sans-serif;
+      background-color: #111;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      padding: 20px;
       text-align: center;
-      padding: 50px 20px;
     }
-    input, button {
+    input {
+      display: block;
+      width: 90%;
+      margin: 10px auto;
       padding: 10px;
-      margin: 10px;
-      border-radius: 5px;
+      border-radius: 8px;
       border: none;
-      width: 80%;
-      max-width: 300px;
+      background: #333;
+      color: white;
     }
     button {
-      background: red;
+      padding: 10px 20px;
+      border: none;
+      background: #e60000;
       color: white;
       font-weight: bold;
+      border-radius: 8px;
       cursor: pointer;
+    }
+    button:hover {
+      background: #ff1a1a;
     }
   </style>
 </head>
 <body>
-  <h1>Pendaftaran BayuGame</h1>
-  <p>Silakan masukkan data Anda:</p>
-  <form>
-    <input type="text" placeholder="Nama lengkap" required><br>
-    <input type="text" placeholder="Nomor WhatsApp" required><br>
-    <button type="submit">Kirim</button>
-  </form>
+  <h1>Formulir Pendaftaran</h1>
+  <input type="text" id="nama" placeholder="Nama Lengkap" />
+  <input type="text" id="wa" placeholder="Nomor WhatsApp" />
+  <button onclick="kirim()">Mainkan</button>
+
+  <script>
+    function kirim() {
+      const nama = document.getElementById("nama").value;
+      const wa = document.getElementById("wa").value;
+      const noAdmin = "6283862596697";
+
+      if (!nama || !wa) {
+        alert("Isi semua data terlebih dahulu!");
+        return;
+      }
+
+      const pesan = `Pendaftaran Game:%0ANama: ${nama}%0AWhatsApp: ${wa}`;
+      window.open(`https://wa.me/${noAdmin}?text=${pesan}`, "_blank");
+    }
+  </script>
 </body>
 </html>
