@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Pembayaran</title>
+  <style>
+    body {
+      background: #111;
+      color: white;
+      font-family: sans-serif;
+      text-align: center;
+      padding: 40px;
+    }
+    .rekening {
+      background: #222;
+      padding: 20px;
+      border-radius: 10px;
+      margin: 20px auto;
+      width: 90%;
+      max-width: 400px;
+    }
+    button {
+      padding: 10px 20px;
+      margin-top: 20px;
+      background: green;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Bayar Sekarang</h1>
+  <div class="rekening">
+    <p><strong>DANA:</strong> 0838-6259-6697</p>
+    <p>Atas Nama: Bayu Game</p>
+    <p>Jumlah: Rp 10.000</p>
+  </div>
+
+  <button onclick="konfirmasi()">Saya Sudah Bayar</button>
+
+  <script>
+    function konfirmasi() {
+      const pesan = encodeURIComponent("Halo Admin, saya sudah melakukan pembayaran.");
+      window.open("https://wa.me/6283862596697?text=" + pesan, "_blank");
+    }
+  </script>
+
+</body>
+</html>
