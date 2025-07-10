@@ -72,12 +72,4 @@
     <button onclick="konfirmasi()">Saya Sudah Bayar</button>
   </div>
 
-  <script>
-    function konfirmasi() {
-      const pesan = encodeURIComponent("Halo Admin, saya sudah melakukan pembayaran.");
-      window.open("https://wa.me/6283862596697?text=" + pesan, "_blank");
-    }
-  </script>
-
-</body>
-</html>
+  <a href="dana://" onclick="window.location='dana://';" style="background:#0084ff;color:#fff;padding:10px 20px;border-radius:5px;text-decoration:none;">Bayar dengan DANA</a>
