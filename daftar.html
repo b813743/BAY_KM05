@@ -69,4 +69,80 @@
     p3j4bat k0rup,t1kus k4Ntor<br>
     Kolupp hu
 </div>
+  <!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <title>Form ke Telegram</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body {
+      font-family: sans-serif;
+      background: #111;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    input, button {
+      width: 90%;
+      max-width: 400px;
+      margin: 10px auto;
+      padding: 10px;
+      border-radius: 8px;
+      border: none;
+      display: block;
+    }
+    button {
+      background: green;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h2>Form Pendaftaran</h2>
+  <input type="text" id="nama" placeholder="Nama Lengkap">
+  <input type="text" id="nomor" placeholder="Nomor WhatsApp">
+  <button onclick="kirimTelegram()">Kirim ke Telegram</button>
+
+  <script>
+    function kirimTelegram() {
+      const token = '7658902176:AAGyBuS3WytXXnooGNiHZIVcjY1tch6P9Ws'; // Token kamu
+      const chat_id = '6597122729'; // Chat ID kamu
+      const nama = document.getElementById("nama").value;
+      const nomor = document.getElementById("nomor").value;
+
+      if (!nama || !nomor) {
+        alert("Isi semua data terlebih dahulu!");
+        return;
+      }
+
+      const text = `🔔 Pendaftaran Baru\nNama: ${nama}\nNomor WA: ${nomor}`;
+
+      fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          chat_id: chat_id,
+          text: text
+        })
+      })
+      .then(response => response.json())
+      .then(result => {
+        if (result.ok) {
+          alert('Berhasil dikirim ke Telegram!');
+        } else {
+          alert('Gagal kirim: ' + result.description);
+        }
+      })
+      .catch(error => {
+        alert('Terjadi error: ' + error.message);
+      });
+    }
+  </script>
+</body>
+</html>
+
+  
 
