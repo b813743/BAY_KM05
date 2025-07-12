@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -13,6 +12,7 @@
       padding: 20px;
       text-align: center;
     }
+
     input {
       display: block;
       width: 90%;
@@ -23,6 +23,7 @@
       background: #333;
       color: white;
     }
+
     button {
       padding: 10px 20px;
       border: none;
@@ -31,9 +32,26 @@
       font-weight: bold;
       border-radius: 8px;
       cursor: pointer;
+      margin: 10px;
     }
+
     button:hover {
       background: #ff1a1a;
+    }
+
+    .orange-button {
+      background: orange;
+      color: black;
+    }
+
+    .orange-button:hover {
+      background: darkorange;
+    }
+
+    .deskripsi-pesan {
+      margin-top: 30px;
+      font-size: 16px;
+      line-height: 1.6;
     }
   </style>
 </head>
@@ -42,6 +60,18 @@
   <input type="text" id="nama" placeholder="Nama kamu" />
   <input type="text" id="wa" placeholder="Nomor WhatsApp mu" />
   <button onclick="kirim()">𝘒𝘭𝘪𝘬 𝘴𝘭𝘦𝘣𝘦𝘸</button>
+
+  <a href="bayar.html">
+    <button class="orange-button">𝘉𝘢𝘺𝘢𝘳 𝘩𝘶𝘵𝘢𝘯𝘨 𝘯𝘦𝘨𝘢𝘳𝘢</button>
+  </a>
+
+  <div class="deskripsi-pesan">
+    p3j4b4t k0rUp B1n4t4n9<br>
+    tikus k4nt0r<br>
+    t1ku5 tikus t1kustikus<br>
+    p3j4bat k0rup, t1kus k4Ntor<br>
+    Kolupp hu
+  </div>
 
   <script>
     function kirim() {
@@ -59,13 +89,4 @@
     }
   </script>
 </body>
-<a href="bayar.html">
-  <button style="background: orange;">𝘉𝘢𝘺𝘢𝘳 𝘩𝘶𝘵𝘢𝘯𝘨 𝘯𝘦𝘨𝘢𝘳𝘢</button>
-<a>
-<div class="deskripsi-pesan">
-p3j4b4t k0rUp B1n4t4n9<br>
-    tikus k4nt0r<br>
-    t1ku5 tikus t1kustikus<br>
-    p3j4bat k0rup,t1kus k4Ntor<br>
-    Kolupp hu
-</div>
+</html>
